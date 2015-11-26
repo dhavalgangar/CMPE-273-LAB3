@@ -111,7 +111,7 @@ func main() {
 //PuttoServer for Consuming server PUT call
 func PuttoServer(hostname string, key string, val string) {
 	reqURL := hostname + "/keys/" + key + "/" + val
-	//fmt.Printf("\n PUT URL: %s", reqURL)
+	fmt.Printf("\n PUT URL: %s", reqURL)
 	//fmt.Printf("\n Key: %s and value: %s is inserted in server %s", key, val, hostname)
 	req, _ := http.NewRequest("PUT", reqURL, nil)
 	client := &http.Client{}
@@ -126,7 +126,7 @@ func PuttoServer(hostname string, key string, val string) {
 func GetfromServer(hostname string, key string) {
 	reqURL := hostname + "/keys/" + key
 	fmt.Printf("\n GET URL: %s", reqURL)
-	fmt.Printf("\n Fetching key: %s from server: %s", key, hostname)
+	//fmt.Printf("\n Fetching key: %s from server: %s", key, hostname)
 	req, _ := http.NewRequest("GET", reqURL, nil)
 	client := &http.Client{}
 	resp, err := client.Do(req)
